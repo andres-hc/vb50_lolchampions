@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LolWeb.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Campeones.aspx.cs" Inherits="LolWeb.Campeones" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="Default.aspx">Home</a>
-                        <a class="nav-link" href="Campeones.aspx">Campeones</a>
+                        <a class="nav-link" href="#">Campeones</a>
                     </div>
                 </div>
             </div>
@@ -28,30 +28,24 @@
     </header>
     <form id="form1" runat="server">
         <main class="container-fluid mt-5">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card-header bg-primary bg-gradient text-white">
-                        <h5>Nuestro Objetivo</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget diam quis lacus imperdiet pellentesque et eget enim. Sed sapien erat, fermentum sit amet arcu id, pretium molestie lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla placerat porttitor quam vitae tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras interdum porta lectus sed consequat. Vestibulum varius neque nibh, egestas finibus eros interdum vel. Vivamus sit amet risus at nulla pulvinar vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ante quam, consectetur eget consequat a, vestibulum ac est. Nunc hendrerit, orci ac rhoncus rhoncus, justo mi porttitor enim, a auctor augue ligula ac nisl. Quisque feugiat non nunc eget sodales.
 
-Nulla dignissim eros vel nunc pellentesque pretium. Cras eleifend eleifend urna, nec sollicitudin enim consectetur in. Ut rhoncus, ligula sed venenatis mattis, nibh velit viverra magna, a interdum ante lacus et magna. Fusce quis sem tempus, aliquet diam ut, vehicula augue. In vitae ligula nec tellus pellentesque porttitor ut ut tellus. Duis porttitor consequat ullamcorper. In vel nulla vitae justo scelerisque tempor at a massa.
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-md col-lg">
+            <div class="row">
+                <% String[] campeones = { "Lux", "Teemo", "Garen", "Katarina", "Ashe", "Irelia" };
+                    String[] fotos = { "https://esports.eldesmarque.com/wp-content/uploads/2020/03/Lux.jpg", "https://depor.com/resizer/n_It8QOJy6zE8N0HEtbspX3K_Gc=/1200x675/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/GOHXKKT5HZA3LLP4U4L72ZXKIY.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_13.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_29.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_23.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_4.jpg" };
+                    for (int i = 0; i < campeones.Length; ++i)
+                    {
+                %>
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <div class="card-header">
-                            <h5>Campeon del mes</h5>
+                        <div class="card-header bg-dark bg-gradient text-white text-center">
+                            <h5><%=campeones[i] %></h5>
                         </div>
                         <div class="card-body">
-                            <img src="Imagenes/ashe.jpg" class="img-fluid" />
+                            <img src="<%=fotos[i] %>" class="img-fluid" />
                         </div>
                     </div>
                 </div>
-
+                <%} %>
             </div>
         </main>
     </form>
